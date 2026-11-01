@@ -4,7 +4,13 @@ using System.Text;
 
 namespace InvoiceProjectPrototype.Main
 {
-    internal class clsMainLogic
+    public class clsMainLogic
     {
+        private clsMainSQL Queries;
+
+        public clsMainLogic()
+        {
+            Queries = new clsMainSQL();
+        }
     }
 }

@@ -17,9 +17,36 @@ namespace InvoiceProjectPrototype.Main
     /// </summary>
     public partial class wndMain : Window
     {
+        private clsMainLogic MainLogic;
+        
         public wndMain()
         {
             InitializeComponent();
+            MainLogic = new clsMainLogic();
+        }
+
+        // this will call the search window
+        private void MenuSearchForInvoice_Click(object sender, RoutedEventArgs e)
+        {
+            // figure out what to pass on
+        }
+
+        // this will call the items window
+        private void MenuManageItems_Click(object sender, RoutedEventArgs e)
+        {
+            // figure out what to pass on
+        }
+
+        // created for later when these are prepped, this should save the invoice
+        private void ButtonSaveInvoice_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        // this should delete the invoice
+        private void ButtonDeleteInvoice_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
