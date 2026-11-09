@@ -20,7 +20,7 @@ namespace InvoiceProjectPrototype.Search
         /// <summary>
         /// Variable to store the invoice selected by the user
         /// </summary>
-        public string? SelectedInvoice { get; private set; }
+        public int? SelectedInvoiceID { get; private set; }
         public wndSearch()
         {
             InitializeComponent();
