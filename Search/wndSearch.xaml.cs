@@ -17,9 +17,50 @@ namespace InvoiceProjectPrototype.Search
     /// </summary>
     public partial class wndSearch : Window
     {
+        /// <summary>
+        /// Variable to store the invoice selected by the user
+        /// </summary>
+        public string? SelectedInvoice { get; private set; }
         public wndSearch()
         {
             InitializeComponent();
+        }
+        /// <summary>
+        /// Handles Invoice selection
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
+        private void btnSelect_Click(object sender, RoutedEventArgs e)
+        {
+            // TODO: Get the selected invoice
+            // Store invoice ID to Selected Invoice
+            // Main will access Selected invoice
+            // ShowDialog() returns true.
+            // Once an invoice is selected, DialogResult will be set to true and the window will close.
+
+        }
+        /// <summary>
+        /// Handles Cancel method listener.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnCancel_Click(object sender, RoutedEventArgs e)
+        {
+            // Closes the search window and does not return a selected invoice
+            DialogResult = false;
+        }
+        /// <summary>
+        /// Clear search filters
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnClear_Click(object sender, RoutedEventArgs e)
+        {
+            cmbInvoiceNum.SelectedIndex = -1;
+            cmbInvoiceDate.SelectedIndex = -1;
+            cmbTotalCost.SelectedIndex = -1;
+            //Reload invoices (Done after the database is set up.)
         }
     }
 }

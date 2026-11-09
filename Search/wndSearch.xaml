@@ -5,8 +5,72 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:InvoiceProjectPrototype.Search"
         mc:Ignorable="d"
-        Title="wndSearch" Height="450" Width="800">
-    <Grid>
-        
+        Title="Search Invoices"
+        Height="450"
+        Width="800"
+        WindowStartupLocation="CenterOwner">
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <!-- Search Filters -->
+        <StackPanel Grid.Row="0"
+                    Orientation="Horizontal"
+                    Margin="0,0,0,15">
+
+            <StackPanel Margin="0,0,15,0">
+                <Label Content="Invoice Number"/>
+                <ComboBox x:Name="cmbInvoiceNum"
+                          Width="200"/>
+            </StackPanel>
+
+            <StackPanel Margin="0,0,15,0">
+                <Label Content="Invoice Date"/>
+                <ComboBox x:Name="cmbInvoiceDate"
+                          Width="200"/>
+            </StackPanel>
+
+            <StackPanel>
+                <Label Content="Total Charge"/>
+                <ComboBox x:Name="cmbTotalCost"
+                          Width="200"/>
+            </StackPanel>
+
+        </StackPanel>
+        <!-- Invoice Search Results -->
+        <DataGrid x:Name="dgInvoices"
+                  Grid.Row="1"
+                  AutoGenerateColumns="True"
+                  IsReadOnly="True"
+                  SelectionMode="Single"
+                  SelectionUnit="FullRow"/>
+
+        <!-- Buttons -->
+        <Grid Grid.Row="2" Margin="0,15,0,0">
+
+            <Button x:Name="btnClear"
+                Content="Clear Selection"
+                Width="130"
+                HorizontalAlignment="Left"
+                Click="btnClear_Click"/>
+
+            <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Right">
+
+                <Button x:Name="btnCancel"
+                    Content="Cancel"
+                    Width="100"
+                    Margin="0,0,10,0"
+                    Click="btnCancel_Click"/>
+
+                <Button x:Name="btnSelect"
+                    Content="Select Invoice"
+                    Width="120"
+                    Click="btnSelect_Click"/>
+
+            </StackPanel>
+        </Grid>
     </Grid>
 </Window>
