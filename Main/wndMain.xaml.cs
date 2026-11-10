@@ -28,7 +28,19 @@ namespace InvoiceProjectPrototype.Main
         // this will call the search window
         private void MenuSearchForInvoice_Click(object sender, RoutedEventArgs e)
         {
-            // figure out what to pass on
+            // grab the window
+            InvoiceProjectPrototype.Search.wndSearch SearchWindow = new InvoiceProjectPrototype.Search.wndSearch();
+
+            if (SearchWindow.ShowDialog() == true)
+            {
+                // make sure this can be null so we don't get weird errors
+                int? SelectedInvoiceID = SearchWindow.SelectedInvoiceID;
+
+                if (SelectedInvoiceID.HasValue)
+                {
+                    // load the invoice here, this doesn't do anything right now
+                }
+            }
         }
 
         // this will call the items window
