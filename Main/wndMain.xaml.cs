@@ -46,7 +46,15 @@ namespace InvoiceProjectPrototype.Main
         // this will call the items window
         private void MenuManageItems_Click(object sender, RoutedEventArgs e)
         {
-            // figure out what to pass on
+            InvoiceProjectPrototype.Items.wndItems ItemsWindow = new InvoiceProjectPrototype.Items.wndItems();
+            ItemsWindow.Owner = this;
+            ItemsWindow.ShowDialog();
+
+            // Items window sets bItemsChanged to true if items were added, edited, or deleted.
+            if (ItemsWindow.bItemsChanged)
+            {
+                // Reload items combo box and current invoice's items.
+            }
         }
 
         // created for later when these are prepped, this should save the invoice
