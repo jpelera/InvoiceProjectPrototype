@@ -5,8 +5,53 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:InvoiceProjectPrototype.Items"
         mc:Ignorable="d"
-        Title="wndItems" Height="450" Width="800">
-    <Grid>
-        
+        Title="Edit Items"
+        Height="450"
+        Width="800"
+        WindowStartupLocation="CenterOwner">
+    <Grid Margin="15">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="250"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- List of all items -->
+        <DataGrid x:Name="dgItems"
+                  Grid.Column="0"
+                  AutoGenerateColumns="True"
+                  IsReadOnly="True"
+                  CanUserAddRows="False"
+                  SelectionMode="Single"/>
+
+        <!-- Selected item details and buttons -->
+        <StackPanel Grid.Column="1" Margin="15,0,0,0">
+            <Label Content="Item Code"/>
+            <TextBox x:Name="txtItemCode"/>
+
+            <Label Content="Description"/>
+            <TextBox x:Name="txtDescription"/>
+
+            <Label Content="Cost"/>
+            <TextBox x:Name="txtCost"/>
+
+            <Button x:Name="btnAdd"
+                    Content="Add Item"
+                    Margin="0,15,0,5"
+                    Click="btnAdd_Click"/>
+
+            <Button x:Name="btnEdit"
+                    Content="Save Changes"
+                    Margin="0,0,0,5"
+                    Click="btnEdit_Click"/>
+
+            <Button x:Name="btnDelete"
+                    Content="Delete Item"
+                    Margin="0,0,0,5"
+                    Click="btnDelete_Click"/>
+
+            <Button x:Name="btnClose"
+                    Content="Close"
+                    Click="btnClose_Click"/>
+        </StackPanel>
     </Grid>
 </Window>
